@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 const data = [
   {
@@ -47,6 +48,10 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          <li className="cursor-pointer text-md p-2 rounded-md bg-white text-blue-600 font-semibold hover:opacity-80 active:bg-amber-400">
+            Contact Us
+          </li>
+          <Modal />
         </ul>
       </nav>
     </>

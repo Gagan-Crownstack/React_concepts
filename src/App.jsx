@@ -4,6 +4,9 @@ import Dashboard from "./components/Dashboard";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import Layout from "./pages/Layout";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   const router = createBrowserRouter([
@@ -29,7 +32,9 @@ function App() {
 
   return (
     <div className="w-5/6 h-screens mx-auto h-screen">
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </div>
   );
 }
